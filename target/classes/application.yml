@@ -1,0 +1,22 @@
+server:
+  port: 8007
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/role_system?useunicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: mysql
+  main:
+    allow-bean-definition-overriding: true
+
+# MyBatis配置
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.treeman.pojo
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mybatis/*Mapper.xml
+
